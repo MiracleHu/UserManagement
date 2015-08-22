@@ -1,0 +1,13 @@
+.logoutbtn{
+	float: right;
+}
+.loginform{
+	position: relative;
+	left: 25%;
+}
+.myloginbtn{
+	width: 160px
+}
+.myjumbo{
+	text-align: center;
+}

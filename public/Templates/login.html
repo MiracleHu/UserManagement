@@ -1,0 +1,30 @@
+
+<div id="login" class='container'>
+  <div class="jumbotron myjumbo">
+    <h1>HR Management System</h1>
+    <p>Welcome to use the human resource management system</p> 
+  </div>
+  <form ng-submit="login()" class="form-horizontal loginform">
+   <div class="form-group">
+    <label class="col-sm-2 control-label">Admin:</label>
+    <div class="col-sm-10">
+      <input type="text" name="username" placeholder="username" ng-model="credentials.username" />
+    </div>
+  </div>
+  <br>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Password:</label>
+    <div class="col-sm-10">
+      <input type="password" name="password" placeholder="password" ng-model="credentials.password" />
+    </div>
+  </div>
+  <br>
+  <div class="form-group">
+    <div class="col-sm-10 col-sm-offset-2">
+      <button type="submit" class="btn btn-success myloginbtn">Log In</button>
+    </div>
+  </div>
+</form>
+
+</div>
+

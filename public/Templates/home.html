@@ -1,0 +1,51 @@
+<div class="container">
+  <br>
+  <h2>Welcome</h2>
+  <button class="btn btn-danger logoutbtn" ng-click="logout()">Log Out</button>
+   <h3>Users</h3>
+   <hr>
+   <button class="btn btn-success" ng-click="editUser('new')">
+    <span class="glyphicon glyphicon-user"></span>  Create New User
+  </button>
+  <hr>
+    <br>
+    <span class="glyphicon glyphicon-search">&nbsp</span><input type="text" placeholder='Search' ng-model='searchkeywords'>
+    <hr>
+    
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><button class="btn btn-info" ng-click="toggleEdit()"><span ng-hide='!userInfo.showorhide'>Edit Mode</span><span ng-hide='userInfo.showorhide'>Done</span></button></th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Sex</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="user in filtered = (users | filter : searchkeywords)| startFrom:(currentPage-1)*itemsPerPage | limitTo:itemsPerPage">
+          <td width="25%">
+            <button class="btn btn-success" ng-hide='!userInfo.showorhide'>{{$index+1}}</button>
+            <button class="btn btn-primary" ng-click="editUser(user)" ng-hide='userInfo.showorhide'>
+              <span class="glyphicon glyphicon-pencil"></span>  Edit
+            </button>
+            <button class="btn btn-danger" ng-click="removeUser(user._id)" ng-hide='userInfo.showorhide'>
+              <span class="glyphicon glyphicon-remove"></span>
+            </button>
+          </td>
+          <td>{{ user.fName }}</td>
+          <td>{{ user.lName }}</td>
+          <td>{{ user.sex }}</td>
+          <td>{{ user.age }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <center>   
+     <pagination total-items="totalItems" items-per-page='itemsPerPage' ng-model="currentPage" max-size="maxTab" class="pagination-md" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+     <!-- <pre>Page: {{currentPage}} / {{numPages}}</pre> -->
+   </center>
+   
+  <hr>
+
+</div>
