@@ -1,6 +1,6 @@
 # MEAN(MongoDB Express.js AngularJS Node.js) Stack User Management App
 This is a responsive Single Page Application built by AngularJS, BootStrap, Node.js & Express.js and MongoDB  <br>
-<h3>Demo Vedio:</h3>
+<h3>Demo Video:</h3>
 http://youtu.be/N9kpWCbwFoU
 <h4>Before installation, make sure you have installed Node.js and MongoDB on your computer</h4>
 <h3>Installation</h3>
