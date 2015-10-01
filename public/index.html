@@ -3,18 +3,21 @@
 <head>
   <title>HR Management</title>
   <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <link rel="stylesheet" href="angularNotification/angular-ui-notification.min.css">
   <link rel="stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular-route.min.js"></script>
   <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+  <!-- ui-router is for multi view -->
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script> -->
   <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body ng-app="myApp">
 
 	<div ng-view ></div>
-
+<script src="angularNotification/angular-ui-notification.min.js"></script>
 <script src= "JS/app.js"></script>
 <script src= "JS/loginCtrl.js"></script>
 <script src= "JS/userCtrl.js"></script>

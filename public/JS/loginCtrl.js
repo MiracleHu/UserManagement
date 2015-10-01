@@ -2,5 +2,5 @@ app.controller("LoginController", function($scope, $location, AuthenticationServ
   $scope.credentials = { username: "", password: "" };
   $scope.login = function() {
     AuthenticationService.login($scope.credentials);
-  }
+  };
 });

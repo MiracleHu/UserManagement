@@ -2,7 +2,7 @@ app.service('UserService',function($http){
 
 	var urlBase = '/api/users'; //local varabile in service, can't be access by UserService.urlBase
 
-	this.getAllUsers = function (){
+	this.getAllUsers = function (){ //return http methods for contronller to use
 		return $http.get(urlBase);
 	};
 

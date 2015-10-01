@@ -1,4 +1,4 @@
-app.controller('userCtrl', function($scope,$log,AuthenticationService,UserService,$location) {
+app.controller('userCtrl', function($scope,$log,AuthenticationService,UserService,$location,Notification){
 
   $scope.users=[]; // declare the users in the $scope for an empty array, this is important
   $scope.userInfo = UserService.userInfo;
@@ -12,7 +12,7 @@ app.controller('userCtrl', function($scope,$log,AuthenticationService,UserServic
       .error(function(data) {
         console.log('Error '+data);
       });
-  };
+  }
 
   initUsers(); // get all users when page load
 
@@ -24,7 +24,7 @@ app.controller('userCtrl', function($scope,$log,AuthenticationService,UserServic
   $scope.$watch('filtered.length', function(){
     if ($scope.filtered!==undefined) {
       $scope.totalItems = $scope.filtered.length;}else{
-        $scope.totalItems = $scope.users.length;};
+        $scope.totalItems = $scope.users.length;}
       });
 
   // end of the Pagination
@@ -43,8 +43,8 @@ app.controller('userCtrl', function($scope,$log,AuthenticationService,UserServic
       $scope.userInfo.edit = false;
       $scope.userInfo.uID = argu._id;// All the variables in userInfo has been set and will be passed in update 
       $scope.userInfo.fName = argu.fName;
-      $scope.userInfo.lName = argu.lName; 
-      $scope.userInfo.sex = argu.sex; 
+      $scope.userInfo.lName = argu.lName;
+      $scope.userInfo.sex = argu.sex;
       $scope.userInfo.age = argu.age;
       $scope.userInfo.passw1 = argu.passw1;
       $scope.userInfo.passw2 = argu.passw2;
@@ -77,6 +77,7 @@ app.controller('userCtrl', function($scope,$log,AuthenticationService,UserServic
     UserService.createNew(userInfo)
       .success(function(data){
         $scope.users = data;
+        Notification.success('New User Created');
       })
       .error(function(data) {
         console.log('Error '+data);
@@ -97,6 +98,7 @@ app.controller('userCtrl', function($scope,$log,AuthenticationService,UserServic
     UserService.updateUser(userInfo)
     .success(function(data){
       $scope.users = data;
+      Notification.success('Update Success');
     })
     .error(function(data) {
       console.log('Error '+data);
